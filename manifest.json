@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "nerdibeard.card-picker",
+  "name": "Card Picker",
+  "version": "0.1.0",
+  "author": "Nerdibeard · fan layout after Shibumi (HANCORE, MIT)",
+  "license": "MIT",
+  "description": "Theme and wallpaper switcher as a fanned hand of cards (Omarchy's own lists, previews and set commands).",
+  "kinds": [
+    "panel"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "panel": "Picker.qml"
+  }
+}
