@@ -24,7 +24,7 @@ Esc or a click outside closes. The active theme / wallpaper carries a dot.
 
 ## Install
 
-It is part of the whole look of the [Amiga Bar](https://github.com/nerdislb/omarchy-amiga-bar) (`setup/install.sh`). Alone:
+It is part of the Tusche look of the [Tusche Bar](https://github.com/nerdislb/omarchy-tusche-bar) (`setup/install.sh`). Alone:
 
 ```bash
 git clone https://github.com/nerdislb/omarchy-card-picker.git ~/src/omarchy-card-picker
