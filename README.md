@@ -12,16 +12,31 @@ everything else is Omarchy's own:
 - switching: `omarchy-theme-set <name>` / `omarchy-theme-bg-set <path>`
 - colours, font and Reduced Motion: the running shell's theme tokens
 
+![Themes as a fanned hand of cards](docs/screenshots/cards.jpg)
+
 Keys: ← → (h l, wheel) choose · Enter / Space / click apply · type to filter ·
 Esc or a click outside closes. The active theme / wallpaper carries a dot.
 
+## Requirements
+
+- **Omarchy:** a recent version with the Quickshell shell (the dev line of early October 2026 or later).
+- **Tools:** `git`, `jq`, `rsync` and `python3`.
+
 ## Install
 
+It is part of the whole look of the [Amiga Bar](https://github.com/nerdislb/omarchy-amiga-bar) (`setup/install.sh`). Alone:
+
 ```bash
-OMARCHY_PATH=~/omarchy ./dev-install.sh
-omarchy-plugin-enable nerdibeard.card-picker
+git clone https://github.com/nerdislb/omarchy-card-picker.git ~/src/omarchy-card-picker
+cd ~/src/omarchy-card-picker && ./dev-install.sh
+omarchy-shell shell rescanPlugins
+omarchy plugin enable nerdibeard.card-picker
 bin/menu-override.py enable    # Style → Theme / Background and their keys
 ```
+
+**Update:** `git pull && ./dev-install.sh`.
+
+**Remove:** `bin/menu-override.py disable && omarchy plugin disable nerdibeard.card-picker`.
 
 `bin/menu-override.py` adds a marked block to Omarchy's user menu extension
 (`~/.config/omarchy/extensions/omarchy-menu.jsonc`) that points Style → Theme
@@ -32,3 +47,7 @@ values) and falls back to Omarchy's own pickers when this plugin is not loaded.
 `bin/menu-override.py disable` removes only that block.
 
 IPC: `omarchy-shell card-picker open|toggle theme|wallpaper`, `close`, `state`.
+
+## Licence
+
+MIT (`LICENSE`); the fanned layout follows Shibumi Shell's picker (HANCORE, MIT). Theme previews shown in the cards belong to their themes' authors.
