@@ -5,6 +5,7 @@ import Quickshell.Io
 import Quickshell.Wayland
 import Quickshell.Hyprland
 import qs.Commons
+import qs.Commons as Commons
 
 // Theme and wallpaper switcher as a fanned hand of cards.
 //
@@ -292,7 +293,7 @@ Item {
             anchors.margins: Style.space(6)
             clip: true
 
-            Rectangle { anchors.fill: parent; color: Qt.darker(Color.popups.background, 1.3) }
+            Rectangle { anchors.fill: parent; color: Qt.darker(Commons.Color.popups.background, 1.3) }
             Image {
               anchors.fill: parent
               source: card.nearby && card.modelData.thumb ? "file://" + card.modelData.thumb : ""
@@ -346,7 +347,7 @@ Item {
             readonly property real inner: Style.space(10)
             ShapePath {
               fillRule: ShapePath.OddEvenFill
-              fillColor: Color.popups.background
+              fillColor: Commons.Color.popups.background
               strokeColor: "transparent"
               strokeWidth: 0
               startX: frame.outer; startY: 0
@@ -370,7 +371,7 @@ Item {
             }
             ShapePath {
               fillColor: "transparent"
-              strokeColor: card.focused ? Color.accent : "transparent"
+              strokeColor: card.focused ? Commons.Color.accent : "transparent"
               strokeWidth: card.focused ? Style.space(2) : 0
               startX: frame.outer; startY: 0
               PathLine { x: frame.width - frame.outer; y: 0 }
@@ -393,7 +394,7 @@ Item {
             x: Style.space(14)
             y: Style.space(14)
             z: 5
-            color: Color.accent
+            color: Commons.Color.accent
             border.color: Qt.rgba(0, 0, 0, 0.35)
             border.width: 1
           }
