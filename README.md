@@ -14,7 +14,7 @@ everything else is Omarchy's own:
 
 ![Themes as a fanned hand of cards](docs/screenshots/cards.jpg)
 
-Keys: ← → (h l, wheel) choose · Enter / Space / click apply · type to filter ·
+Keys: ← → (or the wheel) choose · Enter / Space / click apply · type to filter ·
 Esc or a click outside closes. The active theme / wallpaper carries a dot.
 
 ## Requirements

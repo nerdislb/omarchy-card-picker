@@ -16,8 +16,10 @@ import qs.Commons as Commons
 // `omarchy-menu-images --print-rows` (with the video thumbnails Omarchy
 // caches), `omarchy-theme-set` and `omarchy-theme-bg-set`.
 //
-//   ← → / h l / wheel   move      Enter / Space / click   apply
+//   ← → / wheel         move      Enter / Space / click   apply
 //   type                filter    Esc / click outside     close
+// (Every letter goes to the filter: h and l are no move keys, or "chrom"
+// would arrive as "crom".)
 //
 // IPC: omarchy-shell card-picker open|toggle theme|wallpaper, close, state
 Item {
@@ -220,8 +222,8 @@ Item {
       Keys.onPressed: function(event) {
         var k = event.key
         if (k === Qt.Key_Escape) { if (root.filter !== "") root.filter = ""; else root.close() }
-        else if (k === Qt.Key_Left || k === Qt.Key_H || k === Qt.Key_Up) root.move(-1)
-        else if (k === Qt.Key_Right || k === Qt.Key_L || k === Qt.Key_Down) root.move(1)
+        else if (k === Qt.Key_Left || k === Qt.Key_Up) root.move(-1)
+        else if (k === Qt.Key_Right || k === Qt.Key_Down) root.move(1)
         else if (k === Qt.Key_Home) root.selected = 0
         else if (k === Qt.Key_End) root.selected = Math.max(0, root.shown.length - 1)
         else if (k === Qt.Key_Return || k === Qt.Key_Enter || k === Qt.Key_Space) root.activate()
