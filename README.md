@@ -20,7 +20,7 @@ Esc or a click outside closes. The active theme / wallpaper carries a dot.
 ## Requirements
 
 - **Omarchy:** a recent version with the Quickshell shell (the dev line of early October 2026 or later).
-- **Tools:** `git`, `jq`, `rsync` and `python3`.
+- **Tools:** `git`, `python3`, ImageMagick (`magick`) and coreutils (`timeout`, `stat`). Qt Multimedia is used for live previews; these are part of the existing Omarchy environment here.
 
 ## Install
 
@@ -51,3 +51,15 @@ IPC: `omarchy-shell card-picker open|toggle theme|wallpaper`, `close`, `state`.
 ## Licence
 
 MIT (`LICENSE`); the fanned layout follows Shibumi Shell's picker (HANCORE, MIT). Theme previews shown in the cards belong to their themes' authors.
+
+## Full-screen preview, favourites and live media
+
+Version 0.2 keeps the card fan and adds a full-screen focused-card preview, a
+center-and-grow apply animation, favourites, colour/newest sorting and optional
+muted video/animated-image previews. **Ctrl+F** marks a favourite, **Tab** shows
+favourites, **Ctrl+S** cycles sorting and **Ctrl+P** toggles live preview. All
+letters still enter the search. Reduced Motion is respected.
+
+See [Preview deck](docs/preview-deck.md) for controls, persistence, verification
+and the immutable-generation installer/rollback. No matugen or network service
+is involved; Omarchy remains the only component applying themes/backgrounds.
