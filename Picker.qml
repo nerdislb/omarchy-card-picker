@@ -238,9 +238,15 @@ Item {
   }
 
   // ------------------------------------------------------------ open / apply
+  // On Umbriel the shell's compositor service (only in shells built for it)
+  // knows the focused output; Quickshell's Hyprland model is empty there.
+  readonly property bool umbriel: !Quickshell.env("HYPRLAND_INSTANCE_SIGNATURE")
+    && (!!Quickshell.env("UMBRIEL_SOCKET") || String(Quickshell.env("XDG_CURRENT_DESKTOP") || "").toLowerCase().split(":").indexOf("umbriel") >= 0)
   function focusedScreen() {
     var screens = Quickshell.screens
-    var name = host === "panel" && Hyprland.focusedMonitor ? Hyprland.focusedMonitor.name : ""
+    var name = host !== "panel" ? ""
+      : umbriel ? String(Compositor.focusedOutputName || "")
+      : Hyprland.focusedMonitor ? Hyprland.focusedMonitor.name : ""
     for (var i = 0; i < screens.length; i++) if (screens[i].name === name) return screens[i]
     return screens.length ? screens[0] : null
   }
